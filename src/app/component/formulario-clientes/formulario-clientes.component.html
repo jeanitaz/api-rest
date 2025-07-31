@@ -1,0 +1,17 @@
+<div class="form-container">
+    <form (ngSubmit)="agregarCliente(formulario)" #formulario="ngForm" class="form">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input [(ngModel)]="nombre" type="text" id="nombre" name="nombre" required="">
+        </div>
+        <div class="form-group">
+            <label for="email">Company Email</label>
+            <input [(ngModel)]="email" type="text" id="email" name="email" required="">
+        </div>
+        <div class="form-group">
+            <label for="direccion">Company Email</label>
+            <input [(ngModel)]="direccion" type="text" id="direccion" name="direccion" required="">
+        </div>
+        <button class="form-submit-btn" type="submit">Ingresar</button>
+    </form>
+</div>

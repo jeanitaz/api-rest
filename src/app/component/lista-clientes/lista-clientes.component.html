@@ -1,0 +1,35 @@
+<div class="flex flex-col">
+    <div class=" overflow-x-auto">
+        <div class="min-w-full inline-block align-middle">
+            <div class="overflow-hidden border rounded-lg border-gray-300">
+                <table class=" min-w-full rounded-xl">
+                    <thead>
+                        <tr class="bg-gray-50">
+                            <th scope="col"
+                                class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Nombre
+                            </th>
+                            <th scope="col"
+                                class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Email
+                            </th>
+                            <th scope="col"
+                                class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Direccion
+                            </th>
+                    </thead>
+                    <tbody>
+                        @for(cliente of clientes; track $index){
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{cliente.nombre}}</td>
+                            <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900">{{cliente.email}} </td>
+                            <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900">{{cliente.direccion}} </td>
+                            <td>
+                                <button [routerLink]="['/clientes', cliente.id]">Editar</button>
+                                <button (click)="eliminar(cliente.id)">Eliminar</button>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

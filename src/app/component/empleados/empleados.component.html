@@ -1,0 +1,40 @@
+<div class="flex flex-col">
+    <div class=" overflow-x-auto">
+        <div class="min-w-full inline-block align-middle">
+            <div class="overflow-hidden border rounded-lg border-gray-300">
+                <table class=" min-w-full rounded-xl">
+                    <thead>
+                        <tr class="bg-gray-50">
+                            <th scope="col"
+                                class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Nombre
+                            </th>
+                            <th scope="col"
+                                class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Genero
+                            </th>
+                            <th scope="col"
+                                class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Type
+                            </th>
+                            <th scope="col"
+                                class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Industry
+                                Type </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(empleado of empleados; track $index){
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{empleado.id}}</td>
+                            <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900">{{empleado.name}} </td>
+                            <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900">{{empleado.gender}} </td>
+                            <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900">{{empleado.status}} </td>
+                            <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900">{{empleado.species}} </td>
+                            <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900">
+                                <img src="{{empleado.image}}" alt="" width="100px" height="100px">
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
