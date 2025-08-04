@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuutenticacionService } from '../../servicios/auutenticacion.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,5 +10,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
-
+  constructor(private authServicio: AuutenticacionService, private router: Router) { }
+  logout=()=> {
+    this.authServicio.logout();
+    this.router.navigate(['/login']);
+  }
 }

@@ -5,11 +5,14 @@ import { ClientesComponent } from './pages/clientes/clientes.component';
 import { FormularioClientesComponent } from './component/formulario-clientes/formulario-clientes.component';
 import { ListaClientesComponent } from './component/lista-clientes/lista-clientes.component';
 import { ActualizarComponent } from './component/actualizar/actualizar.component';
+import { autenticaGuard } from './guards/autentica.guard';
+import { LoginComponent } from './component/login/login.component';
 
 export const routes: Routes = [
     {path:"home", component:HomeComponent},
-    {path:"empleados", component:EmpleadosComponent},
+    {path:"empleados", component:EmpleadosComponent, canActivate:[autenticaGuard]},
     {path:"clientes", component:ClientesComponent},
+    {path:"login", component:LoginComponent},
     {path:"formulario", component:FormularioClientesComponent},
     {path:"lista", component:ListaClientesComponent},
     {path:'clientes/:id', component:ActualizarComponent}
