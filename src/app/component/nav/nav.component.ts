@@ -10,7 +10,7 @@ import { AuutenticacionService } from '../../servicios/auutenticacion.service';
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
-  constructor(private authServicio: AuutenticacionService, private router: Router) { }
+  constructor(public authServicio: AuutenticacionService, private router: Router) { }
   logout=()=> {
     this.authServicio.logout();
     this.router.navigate(['/login']);

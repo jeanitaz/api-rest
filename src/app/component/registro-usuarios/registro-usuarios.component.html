@@ -1,0 +1,32 @@
+<div class="login-box">
+    <p>Login</p>
+    <form #formulario="ngForm">
+        <div class="user-box">
+            <input [(ngModel)]="registro.nombre" required="" name="nombre" id="nombre" type="text">
+            <label>Nombre</label>
+        </div>
+        <div class="user-box">
+            <input [(ngModel)]="registro.profesion" required="" name="profesion" type="text">
+            <label>Profesión</label>
+        </div>
+        <div class="user-box">
+            <input [(ngModel)]="registro.fechaNacimiento" required="" name="fecha-nacimiento" type="date">
+        </div>
+        <div class="user-box">
+            <input [(ngModel)]="registro.email" required="" name="email" type="text">
+            <label>Email</label>
+        </div>
+        <div class="user-box">
+            <input [(ngModel)]="registro.password" required="" name="password" type="password">
+            <label>Contraseña</label>
+        </div>
+        <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+        </a>
+    </form>
+    <p>No te has registrado áun? <a href="" class="a2">Sign up!</a></p>
+</div>

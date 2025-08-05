@@ -85,6 +85,16 @@
                         <a routerLink="/lista"  routerLinkActive="active"
                             class="flex items-center justify-between text-gray-500 text-sm lg:text-base font-medium hover:text-indigo-700 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3">Lista</a>
                     </li>
+                    <li>
+                        <a routerLink="/registro"  routerLinkActive="active"
+                            class="flex items-center justify-between text-gray-500 text-sm lg:text-base font-medium hover:text-indigo-700 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3">Registro</a>
+                    </li>
+                    <li>
+                        @if(!authServicio.sesionIniciada()){
+                        <a routerLink="/login"  routerLinkActive="active"
+                            class="flex items-center justify-between text-gray-500 text-sm lg:text-base font-medium hover:text-indigo-700 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3">Iniciar Sesion</a>
+                        }
+                        </li>
                     <button (click)="logout()">Cerrar Sesion</button>
                 </ul>
             </div>
