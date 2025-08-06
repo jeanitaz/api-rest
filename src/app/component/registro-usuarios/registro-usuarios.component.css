@@ -68,12 +68,12 @@
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin-top: 40px;
+  margin-top: 20px;
   letter-spacing: 3px
 }
 
 .login-box a:hover {
-  background: #fff;
+  background: #f70000;
   color: #272727;
   border-radius: 5px;
 }

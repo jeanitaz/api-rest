@@ -1,24 +1,36 @@
 <div class="login-box">
     <p>Login</p>
-    <form #formulario="ngForm">
+    <form [formGroup]="registroFrom" (ngSubmit)="registrar()">
         <div class="user-box">
-            <input [(ngModel)]="registro.nombre" required="" name="nombre" id="nombre" type="text">
+            <input formControlName="nombre" required="" name="nombre" id="nombre" type="text">
             <label>Nombre</label>
+            @if(registroFrom.get('nombre')?.touched && registroFrom.get('nombre')?.invalid){
+                <span class="error text-red-500">El nombre es obligatorio</span>
+            }
         </div>
         <div class="user-box">
-            <input [(ngModel)]="registro.profesion" required="" name="profesion" type="text">
+            <input formControlName="profesion" required="" name="profesion" type="text">
             <label>Profesión</label>
+            @if(registroFrom.get('profesion')?.touched && registroFrom.get('profesion')?.invalid){
+                <span class="error text-red-500">La profesión es obligatoria</span>
+            }
         </div>
         <div class="user-box">
-            <input [(ngModel)]="registro.fechaNacimiento" required="" name="fecha-nacimiento" type="date">
+            <input formControlName="fechaNacimiento" required="" name="fecha-nacimiento" type="date">
         </div>
         <div class="user-box">
-            <input [(ngModel)]="registro.email" required="" name="email" type="text">
+            <input formControlName="email" required="" name="email" type="text">
             <label>Email</label>
+            @if(registroFrom.get('email')?.touched && registroFrom.get('email')?.invalid){
+                <span class="error text-red-500">El nombre no es el correcto</span>
+            }
         </div>
         <div class="user-box">
-            <input [(ngModel)]="registro.password" required="" name="password" type="password">
+            <input formControlName="password" required="" name="password" type="password">
             <label>Contraseña</label>
+            @if(registroFrom.get('password')?.touched && registroFrom.get('nombre')?.invalid){
+                <span class="error text-red-500">La contraseña no es la correcta</span>
+            }
         </div>
         <a href="#">
             <span></span>
@@ -28,5 +40,19 @@
             Submit
         </a>
     </form>
+    
     <p>No te has registrado áun? <a href="" class="a2">Sign up!</a></p>
 </div>
+
+    @if(registroFrom.get('fechaNacimiento')?.value){
+    <div class=" rounded-md bg-gray-100 text-red-700 text-sm font-medium shadow-sm mt-70">
+        Edad estimada:{{ registroFrom.get('fechaNacimiento')?.value| edad}} años
+        
+    </div>}
+
+    @if(registroFrom.get('profesion')?.value){
+    <div class=" rounded-md bg-gray-100 text-red-700 text-sm font-medium
+        shadow-sm mt-70">
+        Profesión:{{ registroFrom.get('profesion')?.value| profesion}}
+    </div>}
+

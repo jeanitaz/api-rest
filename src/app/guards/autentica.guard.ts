@@ -19,4 +19,5 @@ export const autenticaGuard: CanActivateFn = (route, state) => {
     localStorage.setItem('redirectUrl', state.url);
     return router.parseUrl('/login');
   }
+  
 };
